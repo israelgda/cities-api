@@ -29,12 +29,12 @@ public class State {
     @Column(name = "ibge")
     private Integer ibge;
 
-    @Column(name = "pais")
-    private Integer country;
+//    @Column(name = "pais")
+//    private Integer country;
 
-//    @ManyToOne
-//    @JoinColumn(name = "pais", referencedColumnName = "id")
-//    private Country country;
+    @ManyToOne
+    @JoinColumn(name = "pais", referencedColumnName = "id")
+    private Country country;
 
     @Type(type = "jsonb")
     @Basic(fetch = FetchType.LAZY)
@@ -45,7 +45,7 @@ public class State {
     public State() {
     }
 
-    public State(Long id, String name, String uf, Integer ibge, Integer country, List<Integer> ddd) {
+    public State(Long id, String name, String uf, Integer ibge, Country country, List<Integer> ddd) {
         this.id = id;
         this.name = name;
         this.uf = uf;
@@ -88,11 +88,11 @@ public class State {
         this.ibge = ibge;
     }
 
-    public Integer getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(Integer country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 
