@@ -29,9 +29,6 @@ public class City implements Serializable {
     @Column(name="ibge", nullable = false)
     private Integer ibge;
 
-//    @Column(name="lat_lon", nullable = false)
-//    private String lat_lon;
-
     @Type(type = "point")
     @Column(name = "lat_lon", updatable = false, insertable = false)
     private Point lat_lon;
@@ -79,14 +76,6 @@ public class City implements Serializable {
     public void setLat_lon(Point lat_lon) {
         this.lat_lon = lat_lon;
     }
-
-//    public String getLat_lon() {
-//        return lat_lon;
-//    }
-//
-//    public void setLat_lon(String lat_lon) {
-//        this.lat_lon = lat_lon;
-//    }
 
     //HashCode and Equals
     @Override
