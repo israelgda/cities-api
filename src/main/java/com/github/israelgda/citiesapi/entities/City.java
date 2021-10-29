@@ -23,27 +23,15 @@ public class City implements Serializable {
     @Column(name="lat_lon", nullable = false)
     private Double lat_lon;
 
-    @Column(name="latitude", nullable = false)
-    private Double latitude;
-
-    @Column(name="longitude", nullable = false)
-    private Double longitude;
-
-    @Column(name="cod_tom", nullable = false)
-    private Integer cod_tom;
-
     //Constructors
     public City() {
     }
 
-    public City(long id, Integer uf, Integer ibge, Double lat_lon, Double latitude, Double longitude, Integer cod_tom) {
+    public City(long id, Integer uf, Integer ibge, Double lat_lon) {
         this.id = id;
         this.uf = uf;
         this.ibge = ibge;
         this.lat_lon = lat_lon;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.cod_tom = cod_tom;
     }
 
     //Getters and Setters
@@ -77,30 +65,6 @@ public class City implements Serializable {
 
     public void setLat_lon(Double lat_lon) {
         this.lat_lon = lat_lon;
-    }
-
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
-    public Integer getCod_tom() {
-        return cod_tom;
-    }
-
-    public void setCod_tom(Integer cod_tom) {
-        this.cod_tom = cod_tom;
     }
 
     //HashCode and Equals
