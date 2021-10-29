@@ -1,11 +1,12 @@
 package com.github.israelgda.citiesapi.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name="cidade")
-public class City {
+public class City implements Serializable {
 
     //Attributes
     @Id
